@@ -1,0 +1,46 @@
+server:
+  port: 8087
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9001/auth
+
+### Keycloak Client Config ###
+
+keycloak:
+  auth-server-url: http://localhost:9001/auth
+  realm: app-basic
+  resource: app-basic
+  credentials:
+    secret: 28be9680-8485-4ebc-a317-de12a09a07d6
+  bearer-only: true
+  public-client: true
+  security-constraints:
+    - auth-roles:
+        - user
+      security-collections:
+        - name:
+          patterns:
+            - /user/*
+
+### Spring Actuator Config ###
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+### Logging Config ###
+
+logging:
+  level:
+    root: OFF
+    org.springframework.web: OFF
+    org.springframework.security: OFF
+    org.springframework.security.oauth2: OFF
+    #    org.springframework.boot.autoconfigure: OFF
