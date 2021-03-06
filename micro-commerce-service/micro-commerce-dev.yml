@@ -1,38 +1,38 @@
 server:
   port: 8082
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9001/auth/realms/app-micro
+#spring:
+#  security:
+#   oauth2:
+#      resourceserver:
+#        jwt:
+#         issuer-uri: http://localhost:9001/auth/realms/app-micro
 
 ### Keycloak Client Config ###
 
-keycloak:
-  auth-server-url: http://localhost:9001/auth
-  realm: app-micro
-  resource: app-micro
-  credentials:
-    secret: 28be9680-8485-4ebc-a317-de12a09a07d6
-  bearer-only: true
-  public-client: true
-  security-constraints:
-    - auth-roles:
-        - user
-      security-collections:
-        - name:
-          patterns:
-            - /user/*
+# keycloak:
+#  auth-server-url: http://localhost:9001/auth
+#  realm: app-micro
+#  resource: app-micro
+#  credentials:
+#    secret: 28be9680-8485-4ebc-a317-de12a09a07d6
+#  bearer-only: true
+#  public-client: true
+#  security-constraints:
+#    - auth-roles:
+#        - user
+#     security-collections:
+#        - name:
+#         patterns:
+#           - /user/*
 
 ### Spring Actuator Config ###
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#       include: '*'
 
 
 ### Logging Config ###
