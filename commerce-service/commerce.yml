@@ -23,7 +23,7 @@ keycloak:
         - user
      security-collections:
         - name:
-         patterns:
+          patterns:
            - /user/*
 
 ### Spring Actuator Config ###
@@ -43,4 +43,5 @@ logging:
     org.springframework.web: INFO
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
+    org.keycloak: TRACE
     #    org.springframework.boot.autoconfigure: DEBUG
