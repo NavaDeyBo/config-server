@@ -6,25 +6,25 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9001/auth/realms/app-micro
+          issuer-uri: http://auth-server:9000
 
 ### Keycloak Client Config ###
 
-keycloak:
-  auth-server-url: http://localhost:9001/auth
-  realm: app-micro
-  resource: app-micro
-  credentials:
-    secret: b757cdbe-ce3e-44d2-bc70-48955d3e8385
-  bearer-only: true
-  public-client: true
-  security-constraints:
-    - auth-roles:
-        - user
-      security-collections:
-        - name:
-          patterns:
-            - /user/*
+# keycloak:
+#   auth-server-url: http://localhost:9001/auth
+#   realm: app-micro
+#   resource: app-micro
+#   credentials:
+#     secret: b757cdbe-ce3e-44d2-bc70-48955d3e8385
+#   bearer-only: true
+#   public-client: true
+#   security-constraints:
+#     - auth-roles:
+#         - user
+#       security-collections:
+#         - name:
+#           patterns:
+#             - /user/*
 
 ### Spring Actuator Config ###
 
