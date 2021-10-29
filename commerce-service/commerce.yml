@@ -34,6 +34,11 @@ management:
       exposure:
         include: '*'
 
+### Eureka Config
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
 
 ### Logging Config ###
 
